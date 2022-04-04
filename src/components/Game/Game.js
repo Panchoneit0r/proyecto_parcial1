@@ -19,16 +19,15 @@ class Game extends Component {
 
     handleOnPiedra = () =>{
         let Random = parseInt(this.state.random);
-        let eleccion = 1;
         Random = generateRandomNumber(3);
         let text = textoPiedra(Random);
         let pJ = parseInt(this.state.pj);
         let pC = parseInt(this.state.pc);
         if(Random === 1){
-            pC++;
+            pC+= 1;
         }
         else if(Random === 2){
-            pJ++;
+            pJ+= 1;
         }
         this.setState({mensaje: text,
         eleccion: 1,
@@ -46,10 +45,10 @@ class Game extends Component {
         let pJ = parseInt(this.state.pj);
         let pC = parseInt(this.state.pc);
         if(Random === 2){
-            pC++;
+            pC+= 1;
         }
         else if(Random === 0){
-            pJ++;
+            pJ+= 1;
         }
         this.setState({mensaje: text,
         eleccion: 2,
@@ -66,14 +65,16 @@ class Game extends Component {
         let pJ = parseInt(this.state.pj);
         let pC = parseInt(this.state.pc);
         if(Random === 0){
-            pC++;
+            pC+= 1;
         }
         else if(Random === 1){
-            pJ++;
+            pJ+= 1;
         }
         this.setState({mensaje: text,
         eleccion: 3,
         random: Random + 1,
+        pj: pJ,
+        pc: pC
         }) 
     }
 
@@ -106,13 +107,7 @@ class Game extends Component {
 
 export default Game;
 
-function sumarContador(eleccion, random, p1, p2){
-if (eleccion === random + 1){}
-else if (eleccion === 1 && random === 1){p2++; return p2}
-else if (eleccion === 2 && random ===2){p2++; return p2}
-else if (eleccion === 3 && random ===0){p2++; return p2}
-else{p1++; return p1} 
-}
+
 
 function mostarEleccion(eleccion){
     if(eleccion === 1){ return piedra}
