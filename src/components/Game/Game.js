@@ -82,16 +82,16 @@ class Game extends Component {
       <div>
           <header>
              <h1>Piedra, Papel o Tijeras</h1>
-             <img src={piedra} onClick={this.handleOnPiedra}/>
-            <img src={papel} onClick={this.handleOnPapel}/>  
-            <img src={tijeras} onClick={this.handleOnTijeras}/>
+             <img src={piedra} onClick={this.handleOnPiedra} alt="piedra"/>
+            <img src={papel} onClick={this.handleOnPapel} alt="papel"/>  
+            <img src={tijeras} onClick={this.handleOnTijeras} alt="piedra"/>
           </header>
           <div className="juagador"></div>
           <h1>Eleccion del juegador</h1>
-         <img src={mostarEleccion(this.state.eleccion)}></img>
+         <img src={mostarEleccion(this.state.eleccion)} alt=""/>
           <div className="cpu">
           <h1>Eleccion del contricante</h1>
-         <img src={mostarEleccion(this.state.random )}></img>
+         <img src={mostarEleccion(this.state.random )} alt=""/>
           </div>
           <div className="cartel">
               <h2>{this.state.mensaje}</h2>
